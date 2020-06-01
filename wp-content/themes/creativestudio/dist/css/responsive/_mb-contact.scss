@@ -1,0 +1,63 @@
+@media only screen and (max-width: 767px) {
+  //body{
+  //  overflow: hidden;
+  //  height: 100vh;
+  //}
+  #main-menu-nav{
+    position: absolute;
+  }
+  #contact-wrapper {
+    .contact-master-container {
+      position: absolute;
+      top: 100px;
+      padding-bottom: 40px;
+      height: auto;
+      min-height: 0;
+
+      .section {
+        position: static;
+        bottom: auto;
+        .section-header {
+          font-size: 2rem;
+          padding: 30px 0 20px;
+
+          span {
+            display: none;
+          }
+
+          h1 {
+            font-size: 2rem;
+          }
+          &::after {
+            display: none;
+          }
+        }
+        .section-content {
+          //height: 60vh;
+          //overflow: scroll;
+
+          form {
+            width: 90vw;
+            display: block;
+            margin: 0 auto;
+
+            .section-child {
+              padding: 0;
+            }
+            input {
+              margin-bottom: 15px;
+              margin-right: 0;
+            }
+          }
+        }
+        .section-footer{
+          &-body{
+            .line2{
+              font-size: 60%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

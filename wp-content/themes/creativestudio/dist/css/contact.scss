@@ -1,0 +1,291 @@
+//Import Style
+@import "../font/fontface";
+@import "common/common";
+@import "common/mixin";
+@import "header";
+
+#contact-wrapper {
+  //height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  .contact-master-container {
+    min-height: 100vh;
+    overflow-y: auto;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section {
+    position: absolute;
+    //top: 150px;
+    bottom: 0;
+    text-align: center;
+
+    &-header {
+      font-family: "ICielgtAmerican";
+      color: #fff;
+      font-size: 5rem;
+      line-height: 1.2;
+      position: relative;
+      padding: 30px 50px;
+
+      h1 {
+        font-size: 5rem;
+        margin: 0;
+      }
+
+      span {
+        font-family: "SFProText-Bold";
+        font-size: 3rem;
+        text-align: center;
+        line-height: 50px;
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        color: #000;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #fff;
+      }
+    }
+
+    &-content {
+      form {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px -10px;
+        max-width: 700px;
+
+        .section-child-6 {
+          padding: 10px;
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        .section-child-12 {
+          padding: 10px;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        input:not([type="submit"]),
+        textarea {
+          font-size: 1.4rem;
+          color: #fff;
+          padding: 0 15px;
+          width: 100%;
+          height: 40px;
+          //background: rgba(255,255,255,1);
+          background: #000;
+          border: 1px solid rgba(255, 255, 255, 0.8);
+          //border: none;
+          font-family: "Arial";
+
+          &:focus {
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+
+        textarea {
+          padding: 15px;
+          height: 100px;
+          resize: none;
+        }
+
+        input[type="submit"] {
+          margin-left: auto;
+          margin-right: 10px;
+          background: rgba(255, 255, 255, 0.8);
+          cursor: pointer;
+          border: none;
+          height: 40px;
+          padding: 0 15px;
+          display: flex;
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          font-family: "SFProText";
+          align-items: center;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.6);
+          }
+        }
+
+        @-webkit-keyframes runArrow {
+          0% {
+            left: -20px;
+          }
+          100% {
+            left: 52px;
+          }
+        }
+
+        .arrow {
+          width: 40px;
+          position: relative;
+          overflow: hidden;
+          margin-left: 10px;
+          height: 40px;
+
+          span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 150%;
+            line-height: 1;
+            top: 6px;
+            left: -20px;
+            position: absolute;
+            animation: runArrow 1.5s infinite;
+            animation-direction: normal; /* or: normal */
+            animation-timing-function: linear;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      &-body {
+        background: $yellow;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        color: #000;
+
+        a {
+          color: #000;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        .line1 {
+
+          padding: 20px 0;
+          border-bottom: 1px solid #000;
+
+          a {
+            font-family: "SFProText-Bold";
+            font-size: 3rem;
+          }
+        }
+
+        .line2 {
+          display: flex;
+
+          &-col {
+            font-size: 80%;
+            line-height: 1.2;
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:first-child {
+              border-right: 1px solid #000;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
+div.wpcf7 .ajax-loader {
+  display: none;
+}
+
+span.wpcf7-not-valid-tip {
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 0 0 0;
+  color: #ff5700;
+}
+
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing, div.wpcf7-response-output {
+  background: rgba(105, 105, 105, 0.63);
+  color: #ff0008;
+  border: none;
+  width: 100%;
+  font-size: 15px;
+  text-align: left;
+  margin: 20px 10px 0 10px;
+}
+
+div.wpcf7-mail-sent-ok {
+  color: #00ff17;
+}
+
+
+@media only screen and (max-width: 1440px) {
+  #contact-wrapper{
+    .section-footer{
+      &-body{
+        .line1{
+          padding: 10px 0;
+          a{
+            font-size: 2rem;
+          }
+        }
+        .line2{
+          font-size: 85%;
+        }
+      }
+    }
+
+
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+@media only screen and (max-height: 800px) {
+  #contact-wrapper {
+    .section-header {
+      padding: 100px 50px 20px 50px;
+      display: flex;
+      justify-content: center;
+
+      span {
+        display: none;
+      }
+
+      font-size: 3rem;
+
+      h1 {
+        font-size: 3rem;
+        padding-right: 10px;
+      }
+    }
+
+    .section-content {
+      form {
+        margin: 10px -10px;
+        width: 600px;
+      }
+    }
+  }
+}
+
+// Vinh responsive
+@import "responsive/mb-contact";

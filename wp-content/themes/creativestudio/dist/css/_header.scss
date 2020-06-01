@@ -1,0 +1,236 @@
+
+/*Main Menu*/
+#main-menu-nav {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  z-index: 99;
+
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 80px;
+
+      a, button {
+        background: transparent;
+        border: none;
+        font-size: 2.4rem;
+        cursor: pointer;
+        color: #fff;
+        position: relative;
+        padding-left: 15px;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          top: 50%;
+          left: 0;
+          @include translate(0, -50%);
+        }
+        &:after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 15px;
+          width: 0;
+          height: 1px;
+          background: #fff;
+          @include transition(0.5s);
+        }
+        &:hover{
+          &:after{
+            width: calc(100% - 15px);
+          }
+          &:before{
+            background: #fff;
+          }
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+}
+
+#main-menu-content {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 50vw;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  @include transition(0.8s);
+
+  .main-menu-content-btn {
+    position: absolute;
+    top: 70px;
+    right: 70px;
+
+
+    button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      .icn-close {
+        position: relative;
+        left: -10px;
+        float: left;
+        top: 0;
+        width: 28px;
+        height: 28px;
+        opacity: 1;
+        display: block;
+
+
+
+        &:before, &:after {
+          position: absolute;
+          left: 14px;
+          content: ' ';
+          height: 29px;
+          width: 2px;
+          background-color: #fff;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+      &:hover {
+        .icn-close{
+          transition: transform 0.8s ease-in-out;
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  .main-menu-content-nav {
+    padding: 0 10%;
+
+    ul {
+
+      li {
+        a {
+          position: relative;
+          color: #fff;
+          font: normal 60px/1.8 "ICielgtAmerican";
+          padding-left: 70px;
+
+          &:before {
+            content: '→';
+            top: 50%;
+            left: 0;
+            @include translate(0, -50%);
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            font-family: "SFProText-Bold";
+            text-align: center;
+            line-height: 35px;
+            font-size: 35px;
+            background: #fff;
+            color: #000;
+            display: block;
+            border-radius: 50%;
+            padding: 10px;
+          }
+          &:hover{
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  &.menu-active {
+    right: 0;
+
+    .main-menu-content-btn {
+      animation: slideLeftBtn 1.5s;
+      animation-delay: 0.3s;
+    }
+
+    .main-menu-content-nav {
+      ul {
+        li {
+          animation-delay: 0.3s;
+          animation-direction: normal; /* or: normal */
+          animation-timing-function: linear;
+
+          &:first-child {
+            animation: slideLeftMenu 0.5s;
+          }
+
+          &:nth-child(2) {
+            animation: slideLeftMenu 1s;
+          }
+
+          &:last-child {
+            animation: slideLeftMenu 1.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes slideLeftBtn {
+  0% {
+    right: -100px;
+
+  }
+  100% {
+    right: 70px;
+  }
+}
+
+@-webkit-keyframes slideLeftMenu {
+  0% {
+    padding-left: 200px;
+
+  }
+  100% {
+    padding-left: 0;
+  }
+}
+
+/*Main Menu*/
+
+
+@media only screen and (max-height: 800px) {
+  #main-menu-nav{
+    top: 50px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+}
+
+@import "responsive/mb-header";
