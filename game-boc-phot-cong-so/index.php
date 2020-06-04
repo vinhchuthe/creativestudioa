@@ -37,6 +37,7 @@
                         return false;
                     }
                 }
+               
             });
         });
         var url_img_global = "";
@@ -129,15 +130,19 @@
 
             ClickBtn();
             var data_url = $(elm).attr('data-url');
+            var data_content = $(elm).attr("data-content");
+
             content_global = $(elm).attr('data-content-id');
             $.ajax({
                 url: "frame/frame-5.php",
+                method:"POST",
+                data:{content:data_content},
                 success: function (data) {
                     $('#result-wrapper').remove();
                     $('#section-2').addClass("overllay").append(data);
                     $('.result-form-img img').attr('src', "./image/pic/" + data_url);
                     $('#image-url').val(data_url);
-                    $('#image-content').val(content_global);
+                    // $('#image-content').val(content_global);
                 },
                 dataType: 'html'
             });
@@ -157,6 +162,23 @@
             elm.remove();
             $("#section-2").remove();
             loadFrame3();
+        }
+
+        function regexErrForm(){
+            var name = $('#title').val();
+            var patt1 = /\s/g;
+            var result = name.match(patt1);
+            if(!result && name.length <= 10 && name !== ''){
+                $('#form-frame5-submit').submit();
+            }else if(name === ''){  
+                $('#').removeClass('hidden');
+                $('#').html('Name ko duoc rong');
+            }else if(result){  
+                $('#').removeClass('hidden');
+                $('#').html('Name ko duoc rong');
+            }
+
+            
         }
 
 

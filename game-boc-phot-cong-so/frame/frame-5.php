@@ -10,11 +10,11 @@
             <h3>"Nạn nhân" của bạn cần một cái tên</h3>
             <h4>* tối đa 20 ký tự</h4>
         </div>
-        <form action="detail.php" method="get" id="form-submit">
-            <input type="text"  name="title" required >
+        <form action="detail.php" method="post" id="form-frame5-submit">
+            <input type="text"  name="title" id="title" required >
             <input type="hidden" value="" name="url" id="image-url">
-            <input type="hidden" value="" name="content" id="image-content">
-            <button type="submit" class="form-btn-submit" onclick="ClickBtn()">Xác nhận</button>
+            <input type="hidden" value="<?php echo $_POST["content"] ?>" name="content" id="image-content">
+            <button type="button" class="form-btn-submit" onclick="regexErrForm()">Xác nhận</button>
         </form>
     </div>
 
