@@ -103,7 +103,7 @@
             var url_image = "./image/pic/" + data_url;
 
 
-            url_img_global = data_url;
+            // url_img_global = data_url;
             $.ajax({
                 url: "frame/frame-4.php",
                 success: function (data) {
@@ -122,14 +122,17 @@
         function loadFrame5(elm) {
 
             ClickBtn();
+            var data_url = $(elm).attr('data-url');
+            var url_image = "./image/pic/" + data_url;
+
             content_global = $(elm).attr('data-content-id');
             $.ajax({
                 url: "frame/frame-5.php",
                 success: function (data) {
                     $('#result-wrapper').remove();
-                    $('#section-2').append(data);
-                    $('.result-form-img img').attr('src', "./image/pic/" + url_img_global);
-                    $('#image-url').val(url_img_global);
+                    $('#section-2').addClass("overllay").append(data);
+                    $('.result-form-img img').attr('src', url_image);
+                    $('#image-url').val(url_image);
                     $('#image-content').val(content_global);
                 },
                 dataType: 'html'

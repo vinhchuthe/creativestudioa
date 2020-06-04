@@ -316,8 +316,15 @@ area:-webkit-any-link {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9;
+  z-index: 2;
   background: rgba(0, 0, 0, 0.6);
+}
+
+#section-2 #myPanoramix {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  width: calc(100vw - 400px);
 }
 
 #section-2 #myPanoramix img {
@@ -335,8 +342,18 @@ area:-webkit-any-link {
   cursor: url(../image/icon/icon-mouse.png), auto;
 }
 
+#section-2 #map area.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 #section-2 #tutorial-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 5;
   height: 100vh;
   width: 100vw;
@@ -442,7 +459,7 @@ area:-webkit-any-link {
   top: 0;
   right: 0;
   background: #fff;
-  z-index: 99;
+  z-index: 3;
   height: 100vh;
   max-width: 30vw;
   width: 400px;
@@ -515,7 +532,10 @@ area:-webkit-any-link {
 #section-2 #result-container {
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
 }
 
 #section-2 #result-container .btnclose {

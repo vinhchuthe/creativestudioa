@@ -1,18 +1,18 @@
 
 <section id="section-2">
     <div id="myPanoramix">
-        <img src="./image/pic/background.jpg" class="panoramixImg" alt="Panorama" usemap="#Map"/>
+        <img src="./image/pic/background-min.png" class="panoramixImg" alt="Panorama" usemap="#Map"/>
     </div>
 
     <map name="Map" id="Map">
-        <area alt="123" data-url="rs-1.jpg" coords="1489,645,1082,408" shape="rect" onclick="loadFrame4(this)">
-        <area alt="ABC" data-url="rs-2.jpg" coords="3124,408,3382,659" shape="rect" onclick="loadFrame4(this)">
-        <area alt="ABC" data-url="rs-3.jpg" coords="5288,380,5058,625" shape="rect" onclick="loadFrame4(this)">
+        <area class="noSelect" alt="123" data-url="rs-1.jpg" coords="1489,645,1082,408" shape="rect" onclick="loadFrame5(this)">
+        <area class="noSelect" alt="ABC" data-url="rs-2.jpg" coords="3124,408,3382,659" shape="rect" onclick="loadFrame4(this)">
+        <area class="noSelect" alt="ABC" data-url="rs-3.jpg" coords="5288,380,5058,625" shape="rect" onclick="loadFrame4(this)">
     </map>
     <div id="tutorial-wrapper">
-        <button type="button" class="btnclose" onclick="closeTutorial()">
+        <!-- <button type="button" class="btnclose" onclick="closeTutorial()">
             <img src="./image/icon/btn-close.png" alt="">
-        </button>
+        </button> -->
         <div class="tutorial-slider">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
