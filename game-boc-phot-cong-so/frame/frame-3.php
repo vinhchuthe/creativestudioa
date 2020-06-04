@@ -1,13 +1,13 @@
-
+<?php require('../base.php');?>
 <section id="section-2">
     <div id="myPanoramix">
         <img src="./image/pic/background-min.png" class="panoramixImg" alt="Panorama" usemap="#Map"/>
     </div>
 
     <map name="Map" id="Map">
-        <area class="noSelect" alt="123" data-url="rs-1.jpg" coords="1489,645,1082,408" shape="rect" onclick="loadFrame5(this)">
-        <area class="noSelect" alt="ABC" data-url="rs-2.jpg" coords="3124,408,3382,659" shape="rect" onclick="loadFrame4(this)">
-        <area class="noSelect" alt="ABC" data-url="rs-3.jpg" coords="5288,380,5058,625" shape="rect" onclick="loadFrame4(this)">
+        <area class="noSelect" alt="123" title="man1" data-url="rs-1.jpg" coords="1501,193,1745,461" shape="rect" onclick="loadFrame5(this)">
+        <area class="noSelect" alt="ABC" title="man2" data-url="rs-2.jpg" coords="1162,623,1474,1006" shape="rect" onclick="loadFrame4(this)">
+        <area class="noSelect" alt="ABC" title="man3" data-url="rs-3.jpg" coords="799,1023,982,1403" shape="rect" onclick="loadFrame4(this)">
     </map>
     <div id="tutorial-wrapper">
         <!-- <button type="button" class="btnclose" onclick="closeTutorial()">
@@ -40,6 +40,22 @@
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+
+    <div id="result-wrapper">
+        <h3>Xem ai vừa bị bắt quả tang nào</h3>
+        <div class="result-img">
+            <img src="" alt="">
+        </div>
+        <div class="result-group">
+            <ul>
+                <?php foreach ( $arr as $key => $value ): ?>
+                    <li data-content="<?= $value ?>" data-content-id="<?= $key ?>">
+                        <?= $value ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
     </div>
 

@@ -32,11 +32,11 @@ if ( isset( $_GET['title'] ) ) {
 } else {
 	$name = 'Diệp Thu';
 }
-if ( isset( $_GET['content'] ) ) {
-	$content = $arr[ $_GET['content'] ];
-} else {
-	$content = 'vừa bị “bóc phốt” vì uống trà sữa';
-}
+// if ( isset( $_GET['content'] ) ) {
+// 	$content = $arr[ $_GET['content'] ];
+// } else {
+// 	$content = 'vừa bị “bóc phốt” vì uống trà sữa';
+// }
 $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "https" : "http" ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 //$actual_link = "http://creativestudio.local/game-boc-phot-cong-so/detail.php?title=son&url=rs-1.jpg&content=9";
 ?>
@@ -47,7 +47,8 @@ $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "htt
             <div id="img2download" class="section-image">
                 <img src="<?= $url; ?>" alt="">
                 <h2>
-                    "<?= $name ?>" vừa bị bóc phốt vì "<?= $content ?>"
+                    "<?= $name ?>" vừa bị bóc phốt vì 
+                    <!-- "<?= $content ?>" -->
                 </h2>
             </div>
             <div class="section-btn">

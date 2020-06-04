@@ -11,6 +11,13 @@ body {
   line-height: 1.4;
   overflow: hidden;
   cursor: url(../image/icon/icon-mouse.png), auto;
+
+  &::selection {
+    background-color: transparent;
+  }
+  &::-moz-selection {
+    background-color: transparent;
+  }
 }
 
 area:-webkit-any-link {

@@ -22,6 +22,7 @@
     <title>Game bóc phốt công sở</title>
     <!--Script-->
     <script src="./plugin/jQuery/jquery.min.js"></script>
+    <script src="./plugin/jQuery/Tweenmax.js"></script>
     <script src="./plugin/jQuery/jquery.rwdImageMaps.min.js"></script>
     <script src="./plugin/paranoma/panoramix.min.js"></script>
     <script src="./plugin/niceScroll/nicescroll.min.js"></script>
@@ -91,6 +92,11 @@
                             // prevEl: '.swiper-button-prev',
                         },
                     });
+                    $(".result-group").niceScroll({
+                        cursorwidth: "10px",
+                        cursorcolor: '#b0cb88',
+                    });
+                    TweenMax.staggerFrom($(".result-group ul li"),1,{opacity:0,autoAlpha:0,y:"+=20px"},1);
 
                 },
                 dataType: 'html'
@@ -101,38 +107,36 @@
             ClickBtn();
             var data_url = $(elm).attr('data-url');
             var url_image = "./image/pic/" + data_url;
+            $('.result-img img').attr('src', url_image);
 
+            url_img_global = data_url;
+            // $.ajax({
+            //     url: "frame/frame-4.php",
+            //     success: function (data) {
+            //         $('#section-2').append(data);
+            //         $(".result-group").niceScroll({
+            //             cursorwidth: "10px",
+            //             cursorcolor: '#b0cb88',
+            //         });
+            //         $('.result-img img').attr('src', url_image);
 
-            // url_img_global = data_url;
-            $.ajax({
-                url: "frame/frame-4.php",
-                success: function (data) {
-                    $('#section-2').addClass('overllay').append(data);
-                    $(".result-group").niceScroll({
-                        cursorwidth: "10px",
-                        cursorcolor: '#b0cb88',
-                    });
-                    $('.result-img img').attr('src', url_image);
-
-                },
-                dataType: 'html'
-            });
+            //     },
+            //     dataType: 'html'
+            // });
         }
 
         function loadFrame5(elm) {
 
             ClickBtn();
             var data_url = $(elm).attr('data-url');
-            var url_image = "./image/pic/" + data_url;
-
             content_global = $(elm).attr('data-content-id');
             $.ajax({
                 url: "frame/frame-5.php",
                 success: function (data) {
                     $('#result-wrapper').remove();
                     $('#section-2').addClass("overllay").append(data);
-                    $('.result-form-img img').attr('src', url_image);
-                    $('#image-url').val(url_image);
+                    $('.result-form-img img').attr('src', "./image/pic/" + data_url);
+                    $('#image-url').val(data_url);
                     $('#image-content').val(content_global);
                 },
                 dataType: 'html'
@@ -151,7 +155,8 @@
             $('#result-form').remove();
             $('#result-container').remove();
             elm.remove();
-
+            $("#section-2").remove();
+            loadFrame3();
         }
 
 

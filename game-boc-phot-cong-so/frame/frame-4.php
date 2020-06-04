@@ -7,7 +7,7 @@
     <div class="result-group">
         <ul>
 			<?php foreach ( $arr as $key => $value ): ?>
-                <li onclick="loadFrame5(this)" data-content="<?= $value ?>" data-content-id="<?= $key ?>">
+                <li data-content="<?= $value ?>" data-content-id="<?= $key ?>">
 	                <?= $value ?>
                 </li>
 				<?php endforeach; ?>
