@@ -489,6 +489,7 @@ area:-webkit-any-link {
   font-size: 30px;
   font-weight: inherit;
   color: #6c6c6c;
+  margin-bottom: 20px;
 }
 
 #section-2 #result-wrapper .result-img {
@@ -497,7 +498,7 @@ area:-webkit-any-link {
   display: block;
   border-radius: 50%;
   overflow: hidden;
-  margin: 50px 0;
+  margin-bottom: 30px;
 }
 
 #section-2 #result-wrapper .result-group {
@@ -527,14 +528,6 @@ area:-webkit-any-link {
   background: url("../image/icon/bf-li.png") no-repeat;
   opacity: 0.2;
   z-index: -1;
-}
-
-#section-2 #result-wrapper .result-group ul li:hover {
-  background: #c7c7c7;
-}
-
-#section-2 #result-wrapper .result-group ul li:hover:before {
-  opacity: 0.5;
 }
 
 #section-2 #result-wrapper .result-group ul li:last-child {

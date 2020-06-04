@@ -5,7 +5,7 @@
     </div>
 
     <map name="Map" id="Map">
-        <area class="noSelect" alt="123" title="man1" data-url="rs-1.jpg" coords="1501,193,1745,461" shape="rect" onclick="loadFrame5(this)">
+        <area class="noSelect" alt="123" title="man1" data-content="Ăn kem trong giờ làm việc nè." data-url="rs-1.jpg" coords="1501,193,1745,461" shape="rect" onclick="loadFrame5(this)">
         <area class="noSelect" alt="ABC" title="man2" data-url="rs-2.jpg" coords="1162,623,1474,1006" shape="rect" onclick="loadFrame4(this)">
         <area class="noSelect" alt="ABC" title="man3" data-url="rs-3.jpg" coords="799,1023,982,1403" shape="rect" onclick="loadFrame4(this)">
     </map>
@@ -44,10 +44,10 @@
     </div>
 
     <div id="result-wrapper">
-        <h3>Xem ai vừa bị bắt quả tang nào</h3>
         <div class="result-img">
             <img src="" alt="">
         </div>
+        <h3>Xem ai vừa bị bắt quả tang nào</h3>
         <div class="result-group">
             <ul>
                 <?php foreach ( $arr as $key => $value ): ?>

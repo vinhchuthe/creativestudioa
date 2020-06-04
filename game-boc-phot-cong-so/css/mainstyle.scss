@@ -397,6 +397,7 @@ area:-webkit-any-link {
       font-size: 30px;
       font-weight: inherit;
       color: #6c6c6c;
+      margin-bottom: 20px;
     }
 
     .result-img {
@@ -405,7 +406,8 @@ area:-webkit-any-link {
       display: block;
       border-radius: 50%;
       overflow: hidden;
-      margin: 50px 0;
+      // margin: 50px 0;
+      margin-bottom: 30px;
     }
 
     .result-group {
@@ -434,13 +436,13 @@ area:-webkit-any-link {
             z-index: -1;
           }
 
-          &:hover {
-            background: #c7c7c7;
+          // &:hover {
+          //   background: #c7c7c7;
 
-            &:before {
-              opacity: 0.5;
-            }
-          }
+          //   &:before {
+          //     opacity: 0.5;
+          //   }
+          // }
 
           &:last-child {
             margin-bottom: 0;

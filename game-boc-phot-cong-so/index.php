@@ -93,7 +93,7 @@
                         },
                     });
                     $(".result-group").niceScroll({
-                        cursorwidth: "10px",
+                        cursorwidth: "5px",
                         cursorcolor: '#b0cb88',
                     });
                     TweenMax.staggerFrom($(".result-group ul li"),1,{opacity:0,autoAlpha:0,y:"+=20px"},1);
