@@ -88,10 +88,10 @@ $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "htt
 <script>
     function continueBtn() {
         document.getElementById('btnsound').play();
+        // loadFrame3();
     }
 
     html2canvas(document.getElementById('img2download')).then(function (canvas) {
-        // document.body.appendChild(canvas);
         var image = canvas.toDataURL("image/png");
         $('#btn-download').attr('href',image);
     });

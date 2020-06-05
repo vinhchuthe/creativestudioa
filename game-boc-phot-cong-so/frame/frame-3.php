@@ -7,7 +7,7 @@
     <map name="Map" id="Map">
         <area class="noSelect" alt="123" title="man1" data-content="Ăn kem trong giờ làm việc nè." data-url="rs-1.jpg" coords="1501,193,1745,461" shape="rect" onclick="loadFrame5(this)">
         <area class="noSelect" alt="ABC" title="man2" data-url="rs-2.jpg" coords="1162,623,1474,1006" shape="rect" onclick="loadFrame4(this)">
-        <area class="noSelect" alt="ABC" title="man3" data-url="rs-3.jpg" coords="799,1023,982,1403" shape="rect" onclick="loadFrame4(this)">
+        <area class="noSelect" alt="ABC" title="man3" data-url="rs-3.jpg" coords="2,993,165,1267" shape="rect" onclick="loadFrame4(this)">
     </map>
     <div id="tutorial-wrapper">
         <!-- <button type="button" class="btnclose" onclick="closeTutorial()">

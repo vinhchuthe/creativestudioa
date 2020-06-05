@@ -475,7 +475,7 @@ area:-webkit-any-link {
   height: 100vh;
   max-width: 30vw;
   width: 400px;
-  padding: 50px 0;
+  padding: 30px 0;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   -webkit-box-pack: center;
@@ -511,7 +511,7 @@ area:-webkit-any-link {
 }
 
 #section-2 #result-wrapper .result-group ul li {
-  padding: 20px;
+  padding: 15px 20px;
   background: #ebebeb;
   border-radius: 20px 20px 20px 0;
   margin: 0 0 20px 0;
@@ -726,6 +726,7 @@ area:-webkit-any-link {
   #section-1 #section-content-2 .section-content .section-content-image {
     width: 85vw;
     max-width: 700px;
+    margin: 0 auto;
   }
   #section-1 #section-content-2 .section-content .section-content-image img {
     width: 100%;
@@ -773,11 +774,20 @@ area:-webkit-any-link {
   #section-2 #result-wrapper {
     width: 100vw;
     max-width: unset;
+    padding: 20px 0;
+    height: 60vh;
+    top: unset;
+    bottom: 0;
+    -webkit-transform: translateY(50vh);
+            transform: translateY(50vh);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
   }
   #section-2 #result-wrapper h3 {
     font-size: 25px;
   }
   #section-2 #result-wrapper .result-img {
+    display: none;
     width: 200px;
     height: 200px;
     margin: 30px 0;
@@ -785,6 +795,12 @@ area:-webkit-any-link {
   #section-2 #result-wrapper .result-group {
     width: 90%;
     margin-right: 0;
+  }
+  #section-2 #result-wrapper.collapse {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
   }
   #section-2 #result-container #result-form {
     max-height: 500px;
@@ -813,19 +829,26 @@ area:-webkit-any-link {
     position: static;
     text-align: center;
     margin: 20px 0;
-    padding: 0 15px;
+    padding: 0px 15px;
   }
-  #section-2 #result-container #result-form #form-submit {
+  #section-2 #result-container #result-form .result-form-content h3 {
+    font-size: 25px;
+  }
+  #section-2 #result-container #result-form #form-frame5-submit {
     position: static;
     -webkit-transform: none;
             transform: none;
     padding: 0 15px;
   }
   #section-2 #result-container .btnclose {
-    -webkit-transform: translateY(-50%) scale(0.7);
-            transform: translateY(-50%) scale(0.7);
+    -webkit-transform: translateY(-50%) scale(0.6);
+            transform: translateY(-50%) scale(0.6);
     top: calc(50% - 240px);
+    right: 0;
     z-index: 21;
+  }
+  #section-2 #myPanoramix {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=mainstyle.css.map */

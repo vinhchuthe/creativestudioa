@@ -39,6 +39,7 @@
                 }
                
             });
+            
         });
         var url_img_global = "";
         var content_global = "";
@@ -261,5 +262,17 @@
         $(this).toggleClass('disabled');
         $("#audiogame").prop('muted', !$("#audiogame").prop('muted'));
     });
+</script>
+<script>
+        var windowWidth = $(window).width();
+        if(windowWidth < 768){
+ 
+            $( "div#result-wrapper" ).bind( "tap", tapHandler );
+            
+            function tapHandler( event ){
+                $( event.target ).toggleClass( "collapse" );
+            }
+
+        };
 </script>
 </html>
