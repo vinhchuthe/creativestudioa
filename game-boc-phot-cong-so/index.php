@@ -264,15 +264,14 @@
     });
 </script>
 <script>
-        var windowWidth = $(window).width();
-        if(windowWidth < 768){
- 
-            $( "div#result-wrapper" ).bind( "tap", tapHandler );
-            
-            function tapHandler( event ){
-                $( event.target ).toggleClass( "collapse" );
-            }
-
-        };
+        $(document).ready(function() {
+            $(document).on( "click", "#result-wrapper", function(){
+                var windowWidth = $(window).width();
+                if(windowWidth < 768){
+                    $("#result-wrapper").toggleClass("collapse");
+                }
+            } );
+        });
+        
 </script>
 </html>
