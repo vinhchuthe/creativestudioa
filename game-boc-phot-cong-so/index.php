@@ -23,10 +23,12 @@
     <!--Script-->
     <script src="./plugin/jQuery/jquery.min.js"></script>
     <script src="./plugin/jQuery/Tweenmax.js"></script>
+    <script src="./plugin/jQuery/draggable.js"></script>
     <script src="./plugin/jQuery/jquery.rwdImageMaps.min.js"></script>
     <script src="./plugin/paranoma/panoramix.min.js"></script>
     <script src="./plugin/niceScroll/nicescroll.min.js"></script>
     <script src="./plugin/swiper/swiper.min.js"></script>
+    <script src="./plugin/jQuery/image-map.js"></script>
     <script>
 
         $(function () {
@@ -46,18 +48,22 @@
 
 
         function panoramix() {
-            $("#myPanoramix").panoramix({
-                speed: 400, interval: 100
-            });
 
-            $(window).on("load",function() {
-                $("img[usemap]").rwdImageMaps();
+            var draggable = Draggable.create($("#drag"), {
+                bounds: $("#imgwrapper"),
+                edgeResistance:1,
+                type:"y,x",
+                cursor: 'http://channel.mediacdn.vn/2020/6/8/icon-mouse-15916041285931269026525.png',
             })
-            // $("img[usemap]").rwdImageMaps();
+
         }
 
         function ClickBtn() {
             document.getElementById('btnsound').play();
+        }
+
+        function resizemap() {
+            $('map').imageMapResize();
         }
 
         function loadFrame2() {
@@ -75,24 +81,38 @@
 
         function loadFrame3() {
             ClickBtn();
+            changetype();
             $.ajax({
                 url: "frame/frame-3.php",
                 success: function (data) {
                     $('#section-1').remove();
                     $('main').append(data);
+                    setwidth();
                     panoramix();
+                    resizemap();
+                    // setInterval(function() {
+                    //     $('.overlay-gr').removeClass('active').sort( randOrder ).slice(0,3).addClass('active')
+                    // }, 4000);
                     var swiperTutorial = new Swiper('.tutorial-slider .swiper-container', {
                         pagination: {
                             el: '.swiper-pagination',
                         },
-                        autoplay: {
-                            speed: 1000
-                        },
+                        // autoplay: {
+                        //     speed: 1000
+                        // },
                         effect: 'fade',
                         navigation: {
                             nextEl: '.btn-next-slider',
                             // prevEl: '.swiper-button-prev',
                         },
+                        on:{
+                            reachEnd: function() {
+                                $("#slide-next").click(function() {
+                                    console.log("last slide");
+                                    closeTutorial();
+                                });
+                            }
+                        }
                     });
                     $(".result-group").niceScroll({
                         cursorwidth: "5px",
@@ -107,32 +127,30 @@
 
         function loadFrame4(elm) {
             ClickBtn();
-            var data_url = $(elm).attr('data-url');
-            var url_image = "./image/pic/" + data_url;
+            var data_url_video = $(elm).attr('data-url_video');
+            var data_url_img = $(elm).attr('data-url_img');
+            var url_image = "./image/pic/" + data_url_video;
             $('.result-img img').attr('src', url_image);
+            if(storage == "image") {
+                console.log("download image");
+                $('.result-form-img img').attr('src', "./image/pic/" + data_url_img);
+                $('#image-url').val(data_url_img);
+            } else {
+                console.log("download video");
+                $('.result-form-img img').attr('src', "./image/pic/" + data_url_video);
+                $('#image-url').val(data_url_video);
+            }
+            url_img_global = data_url_video;
 
-            url_img_global = data_url;
-            // $.ajax({
-            //     url: "frame/frame-4.php",
-            //     success: function (data) {
-            //         $('#section-2').append(data);
-            //         $(".result-group").niceScroll({
-            //             cursorwidth: "10px",
-            //             cursorcolor: '#b0cb88',
-            //         });
-            //         $('.result-img img').attr('src', url_image);
-
-            //     },
-            //     dataType: 'html'
-            // });
         }
 
         function loadFrame5(elm) {
 
             ClickBtn();
-            var data_url = $(elm).attr('data-url');
+            var data_url_video = $(elm).attr('data-url_video');
+            var data_url_img = $(elm).attr('data-url_img');
             var data_content = $(elm).attr("data-content");
-
+            var storage = localStorage.getItem("key-type");
             content_global = $(elm).attr('data-content-id');
             $.ajax({
                 url: "frame/frame-5.php",
@@ -141,9 +159,15 @@
                 success: function (data) {
                     $('#result-wrapper').remove();
                     $('#section-2').addClass("overllay").append(data);
-                    $('.result-form-img img').attr('src', "./image/pic/" + data_url);
-                    $('#image-url').val(data_url);
-                    // $('#image-content').val(content_global);
+                    if(storage == "image") {
+                        console.log("download image");
+                        $('.result-form-img img').attr('src', "./image/pic/" + data_url_img);
+                        $('#image-url').val(data_url_img);
+                    } else {
+                        console.log("download video");
+                        $('.result-form-img img').attr('src', "./image/pic/" + data_url_video);
+                        $('#image-url').val(data_url_video);
+                    }
                 },
                 dataType: 'html'
             });
@@ -182,6 +206,40 @@
             
         }
 
+        function setwidth() {
+            $("#map-bg").on("load",function() {
+                var widthbg = $(this).width();
+                console.log(widthbg);
+                $("#drag").css("width", widthbg + 'px' );
+                $("#overlay-wrapper").css("width", widthbg + 'px' );
+            });
+        }
+
+        function randOrder() {
+            return ( Math.round(Math.random())-0.5 ); 
+        } 
+
+        function checktype() {
+            var storage = localStorage.getItem("key-type");
+            if(storage == "image") {
+                console.log("download image");
+            } else {
+                console.log("download video");
+            }
+        }
+
+        function changetype() {
+            $(document).on("click",".type-btn", function() {    
+                var type = $(this).attr("data-type");
+                // Check browser support
+                if (typeof(Storage) !== "undefined") {
+                // Store
+                localStorage.setItem("key-type", type);
+                } else {
+                console.log("Sorry, your browser does not support Web Storage...");
+                }
+            });
+        }
 
     </script>
 </head>
@@ -190,29 +248,7 @@
 <main>
     <audio id="audiogame" src="./audio/audiogame.mp3" autoplay loop></audio>
     <audio id="btnsound" src="./audio/button-sound.mp3"></audio>
-	<?php
-	if ( isset( $_GET['fr'] ) ) :
-		if ( $_GET['fr'] == 3 ) : ?>
-			<?php require( 'frame/frame-3.php' ) ?>
-        <script>
-            panoramix();
-            var swiperTutorial = new Swiper('.tutorial-slider .swiper-container', {
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                autoplay: {
-                    speed: 1000
-                },
-                effect: 'fade',
-                navigation: {
-                    nextEl: '.btn-next-slider',
-                    // prevEl: '.swiper-button-prev',
-                },
-            });
 
-        </script>
-		<?php endif; ?>
-	<?php else: ?>
         <section id="section-1">
             <header>
                 <div class="col-left">
@@ -250,7 +286,6 @@
                 <img src="./image/icon/icon-volume.png" alt="">
             </button>
         </section>
-	<?php endif; ?>
 
 </main>
 

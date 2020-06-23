@@ -83,7 +83,7 @@ body {
   font-size: 20px;
   line-height: 1.4;
   overflow: hidden;
-  cursor: url(../image/icon/icon-mouse.png), auto;
+  cursor: url(../image/icon/icon-mouse.png), auto !important;
 }
 
 body::-moz-selection {
@@ -99,7 +99,7 @@ body::-moz-selection {
 }
 
 area:-webkit-any-link {
-  cursor: url(../image/icon/icon-mouse.png), auto;
+  cursor: url(../image/icon/icon-mouse.png), auto !important;
 }
 
 #section-1 {
@@ -332,34 +332,209 @@ area:-webkit-any-link {
   background: rgba(0, 0, 0, 0.6);
 }
 
-#section-2 #myPanoramix {
+#section-2 #imgwrapper {
   position: relative;
   height: 100vh;
-  overflow: hidden;
   width: calc(100vw - 400px);
+  overflow: hidden;
 }
 
-#section-2 #myPanoramix img {
-  height: 100vh;
+#section-2 #imgwrapper #drag {
+  z-index: 3 !important;
+}
+
+#section-2 #imgwrapper #drag #map-bg {
   display: block;
-  width: auto;
-  max-width: inherit;
+  height: 100vh;
+  max-width: unset;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper {
+  position: absolute;
+  top: 0;
   left: 0;
+  height: 100%;
+  z-index: 3 !important;
 }
 
-#section-2 #map area {
-  width: 20px;
-  height: 20px;
-  background: red;
-  cursor: url(../image/icon/icon-mouse.png), auto;
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .npc {
+  max-width: 50px;
+  top: 16%;
+  left: 11.5%;
+  position: absolute;
 }
 
-#section-2 #map area.noSelect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .gif {
+  max-width: 120px;
+  position: absolute;
+  top: 13%;
+  left: 9%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .npc {
+  position: absolute;
+  top: 44%;
+  left: 22%;
+  max-width: 80px;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .gif {
+  max-width: 100px;
+  position: absolute;
+  top: 43%;
+  left: 21.5%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr3 .gif {
+  position: absolute;
+  max-width: 135px;
+  top: 16%;
+  left: 30%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .npc {
+  position: absolute;
+  max-width: 100px;
+  top: 10%;
+  left: 33%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .gif {
+  position: absolute;
+  width: 120px;
+  top: 9.25%;
+  left: 32.5%;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .npc {
+  position: absolute;
+  top: 17.5%;
+  left: 39.25%;
+  width: 170px;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .gif {
+  position: absolute;
+  top: 14.75%;
+  left: 39.25%;
+  width: 170px;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr6 .gif {
+  width: 100px;
+  top: 30%;
+  left: 36%;
+  position: absolute;
+  -webkit-transform: scale(1.7);
+          transform: scale(1.7);
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr7 .gif {
+  position: absolute;
+  width: 130px;
+  top: 21.5%;
+  left: 46%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .npc {
+  position: absolute;
+  max-width: 90px;
+  top: 43%;
+  left: 45%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .gif {
+  position: absolute;
+  max-width: 120px;
+  top: 43.5%;
+  left: 42.5%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .npc {
+  position: absolute;
+  max-width: 80px;
+  top: 54%;
+  left: 56%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .gif {
+  position: absolute;
+  width: 120px;
+  top: 52%;
+  left: 56%;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .npc {
+  position: absolute;
+  max-width: 50px;
+  top: 52%;
+  left: 70%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .gif {
+  position: absolute;
+  width: 110px;
+  top: 49.5%;
+  left: 69%;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .npc {
+  position: absolute;
+  max-width: 50px;
+  top: 21%;
+  left: 78.5%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .gif {
+  width: 130px;
+  top: 16%;
+  left: 75.5%;
+  position: absolute;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr12 .gif {
+  position: absolute;
+  width: 80px;
+  top: 1%;
+  left: 60%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr13 .gif {
+  position: absolute;
+  top: 83.75%;
+  left: 61.5%;
+  width: 80px;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .npc {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  top: 72%;
+  left: 45%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .gif {
+  position: absolute;
+  width: 120px;
+  top: 72%;
+  left: 45%;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr.active .npc {
+  display: none !important;
+}
+
+#section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr.active .gif {
+  display: block !important;
 }
 
 #section-2 #tutorial-wrapper {
@@ -575,6 +750,7 @@ area:-webkit-any-link {
 }
 
 #section-2 #result-form .result-form-img {
+  background-color: #fff;
   width: 200px;
   height: 200px;
   overflow: hidden;
@@ -664,6 +840,140 @@ area:-webkit-any-link {
   }
   #section-2 #result-form {
     max-height: 55vh;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .npc {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    left: 10.75%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .gif {
+    top: 12%;
+    left: 8%;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .npc {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    left: 21.25%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .gif {
+    left: 21%;
+    top: 41.85%;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr3 .gif {
+    top: 14%;
+    left: 29.25%;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .npc {
+    top: 9%;
+    left: 32.75%;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .gif {
+    top: 7%;
+    left: 31.5%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .npc {
+    top: 15.75%;
+    left: 38.35%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .gif {
+    top: 12.75%;
+    left: 38.35%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr6 .gif {
+    top: 28%;
+    left: 35%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr7 .gif {
+    top: 19.75%;
+    left: 45.5%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .npc {
+    top: 41.5%;
+    left: 44.5%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .gif {
+    top: 41.5%;
+    left: 41.5%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .npc {
+    top: 51.5%;
+    left: 56%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .gif {
+    top: 45.75%;
+    left: 55%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .npc {
+    top: 50.5%;
+    left: 70%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .gif {
+    top: 46.5%;
+    left: 68%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .npc {
+    top: 20%;
+    left: 78%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .gif {
+    top: 14%;
+    left: 74.5%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr12 .gif {
+    top: -1%;
+    left: 59%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr13 .gif {
+    top: 82.5%;
+    left: 61%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .npc {
+    top: 71%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .gif {
+    top: 71%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
 }
 
@@ -771,6 +1081,10 @@ area:-webkit-any-link {
   #section-2 #tutorial-wrapper .btnclose {
     visibility: hidden;
   }
+  #section-2 #tutorial-wrapper .btnclose:hover {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
   #section-2 #result-wrapper {
     width: 100vw;
     max-width: unset;
@@ -847,8 +1161,532 @@ area:-webkit-any-link {
     right: 0;
     z-index: 21;
   }
-  #section-2 #myPanoramix {
+  #section-2 #imgwrapper {
     width: 100%;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 680px) {
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .npc {
+    top: 17%;
+    left: 11.75%;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .gif {
+    top: 13.5%;
+    left: 9%;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .npc {
+    top: 43.75%;
+    left: 21.75%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .gif {
+    top: 42%;
+    left: 21.25%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr3 .gif {
+    top: 15%;
+    left: 29.5%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .npc {
+    top: 9.75%;
+    left: 33%;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .gif {
+    top: 7.75%;
+    left: 32%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .npc {
+    top: 16.25%;
+    left: 38.75%;
+    -webkit-transform: scale(10.9);
+            transform: scale(10.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .gif {
+    top: 13%;
+    left: 38.75%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr6 .gif {
+    top: 31%;
+    left: 36%;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr7 .gif {
+    top: 20.5%;
+    left: 45.75%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .npc {
+    top: 42.5%;
+    left: 45%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .gif {
+    top: 42.5%;
+    left: 42%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .npc {
+    top: 52.5%;
+    left: 55.75%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .gif {
+    top: 50.5%;
+    left: 55.5%;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .npc {
+    top: 50.5%;
+    left: 70%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .gif {
+    top: 48.5%;
+    left: 68.5%;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .npc {
+    top: 23%;
+    left: 79%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .gif {
+    top: 16%;
+    left: 75%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr12 .gif {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr13 .gif {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .npc {
+    top: 73%;
+    left: 46%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .gif {
+    top: 72%;
+    left: 45.65%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .npc {
+    top: 17%;
+    left: 11.75%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .gif {
+    top: 14%;
+    left: 9.5%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .npc {
+    top: 45.75%;
+    left: 22%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .gif {
+    top: 44.75%;
+    left: 21.75%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr3 .gif {
+    top: 17.5%;
+    left: 30.5%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .npc {
+    top: 12%;
+    left: 33.75%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .gif {
+    top: 10.25%;
+    left: 32.75%;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .npc {
+    top: 19%;
+    left: 40%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .gif {
+    top: 16.75%;
+    left: 40%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr7 .gif {
+    top: 23%;
+    left: 46.5%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .npc {
+    top: 44%;
+    left: 45%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .gif {
+    top: 44.5%;
+    left: 42.5%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .npc {
+    top: 55.75%;
+    left: 56.24%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .gif {
+    top: 50%;
+    left: 56.1%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .npc {
+    top: 52.5%;
+    left: 70.5%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .gif {
+    top: 48%;
+    left: 69%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .npc {
+    top: 23%;
+    left: 79%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .gif {
+    top: 16.5%;
+    left: 76%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr12 .gif {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr13 .gif {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .npc {
+    top: 73%;
+    left: 46%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .gif {
+    top: 73%;
+    left: 46%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1900px) and (max-width: 2000px) {
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .npc {
+    top: 17%;
+    left: 11.75%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .gif {
+    top: 14%;
+    left: 9.5%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .npc {
+    top: 45.5%;
+    left: 22%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .gif {
+    top: 44%;
+    left: 22%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr3 .gif {
+    top: 17.5%;
+    left: 30.5%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .npc {
+    top: 11.5%;
+    left: 33.5%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .gif {
+    top: 10.5%;
+    left: 32.85%;
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .npc {
+    top: 18.75%;
+    left: 40%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .gif {
+    top: 16.5%;
+    left: 40%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr6 .gif {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr7 .gif {
+    top: 23%;
+    left: 46.5%;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .npc {
+    top: 44%;
+    left: 45%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .gif {
+    top: 45.5%;
+    left: 42.5%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .npc {
+    top: 55.5%;
+    left: 56.25%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .gif {
+    top: 50%;
+    left: 56.1%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .npc {
+    top: 53%;
+    left: 70.5%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .gif {
+    top: 48%;
+    left: 69%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .gif {
+    top: 16.5%;
+    left: 76%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr12 .gif {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr13 .gif {
+    top: 84.25%;
+    left: 61.5%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .npc {
+    top: 73%;
+    left: 45.5%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .gif {
+    top: 73%;
+    left: 45.5%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@media (min-width: 2001px) {
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .npc {
+    top: 19%;
+    left: 12.5%;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr1 .gif {
+    top: 17%;
+    left: 11%;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .npc {
+    top: 47.5%;
+    left: 22.5%;
+    -webkit-transform: scale(1.7);
+            transform: scale(1.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr2 .gif {
+    top: 46.5%;
+    left: 22.75%;
+    -webkit-transform: scale(1.7);
+            transform: scale(1.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr3 .gif {
+    top: 21%;
+    left: 31.75%;
+    -webkit-transform: scale(1.9);
+            transform: scale(1.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .npc {
+    top: 15%;
+    left: 34.5%;
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr4 .gif {
+    top: 13.25%;
+    left: 33.75%;
+    -webkit-transform: scale(2.1);
+            transform: scale(2.1);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .npc {
+    top: 22%;
+    left: 41.25%;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr5 .gif {
+    top: 20%;
+    left: 41.25%;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr6 .gif {
+    -webkit-transform: scale(1.7);
+            transform: scale(1.7);
+    top: 33%;
+    left: 37%;
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr7 .gif {
+    top: 26.25%;
+    left: 47.75%;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .npc {
+    top: 47%;
+    left: 46%;
+    -webkit-transform: scale(1.7);
+            transform: scale(1.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr8 .gif {
+    top: 48.5%;
+    left: 43.5%;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .npc {
+    top: 58%;
+    left: 56.85%;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr9 .gif {
+    top: 54%;
+    left: 57.25%;
+    -webkit-transform: scale(1.9);
+            transform: scale(1.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .npc {
+    top: 54.5%;
+    left: 70.5%;
+    -webkit-transform: scale(1.7);
+            transform: scale(1.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr10 .gif {
+    top: 51%;
+    left: 70%;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .npc {
+    top: 24%;
+    left: 78.75%;
+    -webkit-transform: scale(1.7);
+            transform: scale(1.7);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr11 .gif {
+    top: 20%;
+    left: 77.5%;
+    -webkit-transform: scale(1.9);
+            transform: scale(1.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr12 .gif {
+    top: 3%;
+    left: 60.5%;
+    -webkit-transform: scale(1.9);
+            transform: scale(1.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr13 .gif {
+    top: 86.25%;
+    left: 62.25%;
+    -webkit-transform: scale(1.9);
+            transform: scale(1.9);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .npc {
+    top: 76%;
+    left: 46.5%;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  #section-2 #imgwrapper #drag #overlay-wrapper .overlay-gr#gr14 .gif {
+    top: 76%;
+    left: 46.5%;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
   }
 }
 /*# sourceMappingURL=mainstyle.css.map */

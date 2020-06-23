@@ -10,12 +10,12 @@
 			<h4>Lựa chọn hình thức “bóc phốt”</h4>
 			<ul>
 				<li>
-					<button type="button" onclick="loadFrame3()">
+					<button class="type-btn" type="button" onclick="loadFrame3()" data-type="image">
 						<img src="./image/icon/btn-photo.png" alt="">
 					</button>
 				</li>
 				<li>
-					<button type="button" onclick="loadFrame3()">
+					<button class="type-btn" type="button" onclick="loadFrame3()" data-type="video">
 						<img src="./image/icon/btn-video.png" alt="">
 					</button>
 				</li>

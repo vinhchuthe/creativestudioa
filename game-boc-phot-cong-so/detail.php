@@ -51,7 +51,7 @@ $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "htt
                 </h2>
             </div>
             <div class="section-btn">
-                <a href="/game-boc-phot-cong-so?fr=3" onclick="continueBtn()">Bóc phốt tiếp</a>
+                <a href="/game-boc-phot-cong-so" onclick="continueBtn()">Bóc phốt tiếp</a>
             </div>
         </div>
         <div class="section-right">
@@ -70,8 +70,7 @@ $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "htt
                         <a href="#" class="ico ico-ins"></a>
                     </li>
                     <li>
-                        <a href="" id="btn-download" onclick="downloadImg(this)" download="<?= $name ?>.jpg"
-                           class="ico ico-download" title="Download"></a>
+                        <a id="btn-download" class="ico ico-download" title="Download"></a>
                     </li>
                 </ul>
             </div>
@@ -79,7 +78,6 @@ $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "htt
                     Athena</a></h4>
         </div>
     </section>
-
 </main>
 
 <!--Script-->
@@ -88,7 +86,6 @@ $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "htt
 <script>
     function continueBtn() {
         document.getElementById('btnsound').play();
-        // loadFrame3();
     }
 
     html2canvas(document.getElementById('img2download')).then(function (canvas) {
@@ -96,6 +93,9 @@ $actual_link = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "htt
         $('#btn-download').attr('href',image);
     });
 
+    $("#btn-download").click(function() {
+        $('#btn-download').attr("download","<?= $name ?>.jpg");
+    });
 
 </script>
 </body>

@@ -10,7 +10,7 @@ body {
   font-size: 20px;
   line-height: 1.4;
   overflow: hidden;
-  cursor: url(../image/icon/icon-mouse.png), auto;
+  cursor: url(../image/icon/icon-mouse.png), auto !important;
 
   &::selection {
     background-color: transparent;
@@ -21,7 +21,7 @@ body {
 }
 
 area:-webkit-any-link {
-  cursor: url(../image/icon/icon-mouse.png), auto;
+  cursor: url(../image/icon/icon-mouse.png), auto !important;
 }
 
 #section-1 {
@@ -239,35 +239,237 @@ area:-webkit-any-link {
     }
   }
 
-  #myPanoramix {
+  #imgwrapper {
     position: relative;
     height: 100vh;
-    overflow: hidden;
     width: calc(100vw - 400px);
+    overflow: hidden;
 
-    img {
-      height: 100vh;
-      display: block;
-      width: auto;
-      max-width: inherit;
-      left: 0;
-    }
-  }
+    #drag {
+      z-index: 3 !important;
 
-  #map {
-    area {
-      width: 20px;
-      height: 20px;
-      background: red;
-      cursor: url(../image/icon/icon-mouse.png), auto;
+      #map-bg {
+        display: block;
+        height: 100vh;
+        max-width: unset;
+      }
+      #overlay-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 3 !important;
 
-      &.noSelect {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        .overlay-gr {
+          &#gr1 {
+            .npc {
+              max-width: 50px;
+              top: 16%;
+              left: 11.5%;
+              position: absolute;
+            }
+            .gif {
+              max-width: 120px;
+              position: absolute;
+              top: 13%;
+              left: 9%;
+              // display: none;
+            }
+          }
+
+          &#gr2 {
+            .npc {
+              position: absolute;
+              top: 44%;
+              left: 22%;
+              max-width: 80px;
+            }
+            .gif {
+              max-width: 100px;
+              position: absolute;
+              top: 43%;
+              left: 21.5%;
+              // display: none;
+            }
+          }
+
+          &#gr3 {
+            .gif {
+              position: absolute;
+              max-width: 135px;
+              top: 16%;
+              left: 30%;
+              // display: none;
+            }
+          }
+
+          &#gr4 {
+            .npc {
+              position: absolute;
+              max-width: 100px;
+              top: 10%;
+              left: 33%;
+            }
+            .gif {
+              // display: none;
+              position: absolute;
+              width: 120px;
+              top: 9.25%;
+              left: 32.5%;
+              transform: scale(1.2);
+            }
+          }
+
+          &#gr5 {
+            .npc {
+              position: absolute;
+              top: 17.5%;
+              left: 39.25%;
+              width: 170px;
+            }
+            .gif {
+              // display: none;
+              position: absolute;
+              top: 14.75%;
+              left: 39.25%;
+              width: 170px;
+            }
+          }
+
+          &#gr6 {
+            .gif {
+              // display: none;
+              width: 100px;
+              top: 30%;
+              left: 36%;
+              position: absolute;
+              transform: scale(1.7);
+            }
+          }
+
+          &#gr7 {
+            .gif {
+              // display: none;
+              position: absolute;
+              width: 130px;
+              top: 21.5%;
+              left: 46%;
+              transform: scale(1.1);
+            }
+          }
+
+          &#gr8 {
+            .npc {
+              position: absolute;
+              max-width: 90px;
+              top: 43%;
+              left: 45%;
+            }
+            .gif {
+              // display: none;
+              position: absolute;
+              max-width: 120px;
+              top: 43.5%;
+              left: 42.5%;
+            }
+          }
+
+          &#gr9 {
+            .npc {
+              position: absolute;
+              max-width: 80px;
+              top: 54%;
+              left: 56%;
+            }
+            .gif {
+              // display: none;
+              position: absolute;
+              width: 120px;
+              top: 52%;
+              left: 56%;
+              transform: scale(1.5);
+            }
+          }
+
+          &#gr10 {
+            .npc {
+              position: absolute;
+              max-width: 50px;
+              top: 52%;
+              left: 70%;
+            }
+            .gif {
+              // display: none;
+              position: absolute;
+              width: 110px;
+              top: 49.5%;
+              left: 69%;
+              transform: scale(1.5);
+            }
+          }
+
+          &#gr11 {
+            .npc {
+              position: absolute;
+              max-width: 50px;
+              top: 21%;
+              left: 78.5%;
+            }
+            .gif {
+              // display: none;
+              width: 130px;
+              top: 16%;
+              left: 75.5%;
+              position: absolute;
+            }
+          }
+
+          &#gr12 {
+            .gif {
+              // display: none;
+              position: absolute;
+              width: 80px;
+              top: 1%;
+              left: 60%;
+            }
+          }
+
+          &#gr13 {
+            .gif {
+              // display: none;
+              position: absolute;
+              top: 83.75%;
+              left: 61.5%;
+              width: 80px;
+            }
+          }
+
+          &#gr14 {
+            .npc {
+              position: absolute;
+              width: 60px;
+              height: auto;
+              top: 72%;
+              left: 45%;
+            }
+            .gif {
+              // display: none;
+              position: absolute;
+              width: 120px;
+              top: 72%;
+              left: 45%;
+            }
+          }
+
+          &.active {
+            .npc {
+              display: none !important;
+            }
+            .gif {
+              display: block !important;
+            }
+          }
+        }
       }
     }
   }
@@ -491,6 +693,7 @@ area:-webkit-any-link {
 
     .result-form {
       &-img {
+        background-color: #fff;
         width: 200px;
         height: 200px;
         overflow: hidden;
@@ -599,6 +802,153 @@ area:-webkit-any-link {
   #section-2 {
     #result-form {
       max-height: 55vh;
+    }
+    #imgwrapper {
+      #drag {
+        #overlay-wrapper {
+          .overlay-gr {
+            &#gr1 {
+              .npc {
+                transform: scale(0.7);
+                left: 10.75%;
+              }
+              .gif {
+                top: 12%;
+                left: 8%;
+                transform: scale(0.7);
+              }
+            }
+            &#gr2 {
+              .npc {
+                transform: scale(0.7);
+                left: 21.25%;
+              }
+              .gif {
+                left: 21%;
+                top: 41.85%;
+                transform: scale(0.7);
+              }
+            }
+            &#gr3 {
+              .gif {
+                top: 14%;
+                left: 29.25%;
+                transform: scale(0.85);
+              }
+            }
+            &#gr4 {
+              .npc {
+                top: 9%;
+                left: 32.75%;
+                transform: scale(0.7);
+              }
+              .gif {
+                top: 7%;
+                left: 31.5%;
+                transform: scale(1);
+              }
+            }
+            &#gr5 {
+              .npc {
+                top: 15.75%;
+                left: 38.35%;
+                transform: scale(0.8);
+              }
+              .gif {
+                top: 12.75%;
+                left: 38.35%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr6 {
+              .gif {
+                top: 28%;
+                left: 35%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr7 {
+              .gif {
+                top: 19.75%;
+                left: 45.5%;
+                transform: scale(0.9);
+              }
+            }
+            &#gr8 {
+              .npc {
+                top: 41.5%;
+                left: 44.5%;
+                transform: scale(0.8);
+              }
+              .gif {
+                top: 41.5%;
+                left: 41.5%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr9 {
+              .npc {
+                top: 51.5%;
+                left: 56%;
+                transform: scale(0.8);
+              }
+              .gif {
+                top: 45.75%;
+                left: 55%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr10 {
+              .npc {
+                top: 50.5%;
+                left: 70%;
+                transform: scale(0.8);
+              }
+              .gif {
+                top: 46.5%;
+                left: 68%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr11 {
+              .npc {
+                top: 20%;
+                left: 78%;
+                transform: scale(0.8);
+              }
+              .gif {
+                top: 14%;
+                left: 74.5%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr12 {
+              .gif {
+                top: -1%;
+                left: 59%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr13 {
+              .gif {
+                top: 82.5%;
+                left: 61%;
+                transform: scale(0.9);
+              }
+            }
+            &#gr14 {
+              .npc {
+                top: 71%;
+                transform: scale(0.8);
+              }
+              .gif {
+                top: 71%;
+                transform: scale(0.8);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -741,6 +1091,9 @@ area:-webkit-any-link {
       }
       .btnclose {
         visibility: hidden;
+        &:hover {
+          @include scale(0.8);
+        }
       }
     }
     #result-wrapper {
@@ -811,10 +1164,610 @@ area:-webkit-any-link {
         z-index: 21;
       }
     }
-    #myPanoramix {
+    #imgwrapper {
       width: 100%;
     }
   }
 }
 
-// End Vinh Responsive code
+@media (max-width: 767px) and (max-height: 680px) {
+  #section-2 {
+    #imgwrapper {
+      #drag {
+        #overlay-wrapper {
+          .overlay-gr {
+            &#gr1 {
+              .npc {
+                top: 17%;
+                left: 11.75%;
+                transform: scale(0.7);
+              }
+              .gif {
+                top: 13.5%;
+                left: 9%;
+                transform: scale(0.7);
+              }
+            }
+            &#gr2 {
+              .npc {
+                top: 43.75%;
+                left: 21.75%;
+                transform: scale(0.8);
+              }
+              .gif {
+                top: 42%;
+                left: 21.25%;
+                transform: scale(0.8);
+              }
+            }
+            &#gr3 {
+              .gif {
+                top: 15%;
+                left: 29.5%;
+                transform: scale(0.9);
+              }
+            }
+            &#gr4 {
+              .npc {
+                top: 9.75%;
+                left: 33%;
+                transform: scale(0.7);
+              }
+              .gif {
+                top: 7.75%;
+                left: 32%;
+                transform: scale(1);
+              }
+            }
+            &#gr5 {
+              .npc {
+                top: 16.25%;
+                left: 38.75%;
+                transform: scale(10.9);
+              }
+              .gif {
+                top: 13%;
+                left: 38.75%;
+                transform: scale(0.9);
+              }
+            }
+            &#gr6 {
+              .npc {
+              }
+              .gif {
+                top: 31%;
+                left: 36%;
+                transform: scale(1.5);
+              }
+            }
+            &#gr7 {
+              .gif {
+                top: 20.5%;
+                left: 45.75%;
+                transform: scale(0.9);
+              }
+            }
+            &#gr8 {
+              .npc {
+                top: 42.5%;
+                left: 45%;
+                transform: scale(0.9);
+              }
+              .gif {
+                top: 42.5%;
+                left: 42%;
+                transform: scale(0.9);
+              }
+            }
+            &#gr9 {
+              .npc {
+                top: 52.5%;
+                left: 55.75%;
+                transform: scale(0.9);
+              }
+              .gif {
+                top: 50.5%;
+                left: 55.5%;
+                transform: scale(1.3);
+              }
+            }
+            &#gr10 {
+              .npc {
+                top: 50.5%;
+                left: 70%;
+              }
+              .gif {
+                top: 48.5%;
+                left: 68.5%;
+                transform: scale(1.3);
+              }
+            }
+            &#gr11 {
+              .npc {
+                top: 23%;
+                left: 79%;
+              }
+              .gif {
+                top: 16%;
+                left: 75%;
+                transform: scale(1);
+              }
+            }
+            &#gr12 {
+              .gif {
+                transform: scale(1);
+              }
+            }
+            &#gr13 {
+              .gif {
+                transform: scale(1.1);
+              }
+            }
+            &#gr14 {
+              .npc {
+                top: 73%;
+                left: 46%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 72%;
+                left: 45.65%;
+                transform: scale(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) and (max-height: 768px) {
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+  #section-2 {
+    #imgwrapper {
+      #drag {
+        #overlay-wrapper {
+          .overlay-gr {
+            &#gr1 {
+              .npc {
+                top: 17%;
+                left: 11.75%;
+                transform: scale(0.9);
+              }
+              .gif {
+                top: 14%;
+                left: 9.5%;
+                transform: scale(0.9);
+              }
+            }
+            &#gr2 {
+              .npc {
+                top: 45.75%;
+                left: 22%;
+              }
+              .gif {
+                top: 44.75%;
+                left: 21.75%;
+              }
+            }
+            &#gr3 {
+              .gif {
+                top: 17.5%;
+                left: 30.5%;
+                transform: scale(1.2);
+              }
+            }
+            &#gr4 {
+              .npc {
+                top: 12%;
+                left: 33.75%;
+                transform: scale(0.9);
+              }
+              .gif {
+                top: 10.25%;
+                left: 32.75%;
+                transform: scale(1.3);
+              }
+            }
+            &#gr5 {
+              .npc {
+                top: 19%;
+                left: 40%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 16.75%;
+                left: 40%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr6 {
+              .npc {
+              }
+              .gif {
+              }
+            }
+            &#gr7 {
+              .gif {
+                top: 23%;
+                left: 46.5%;
+                transform: scale(1.2);
+              }
+            }
+            &#gr8 {
+              .npc {
+                top: 44%;
+                left: 45%;
+              }
+              .gif {
+                top: 44.5%;
+                left: 42.5%;
+              }
+            }
+            &#gr9 {
+              .npc {
+                top: 55.75%;
+                left: 56.24%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 50%;
+                left: 56.1%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr10 {
+              .npc {
+                top: 52.5%;
+                left: 70.5%;
+              }
+              .gif {
+                top: 48%;
+                left: 69%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr11 {
+              .npc {
+                top: 23%;
+                left: 79%;
+              }
+              .gif {
+                top: 16.5%;
+                left: 76%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr12 {
+              .gif {
+                transform: scale(1.2);
+              }
+            }
+            &#gr13 {
+              .gif {
+                transform: scale(1.1);
+              }
+            }
+            &#gr14 {
+              .npc {
+                top: 73%;
+                left: 46%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 73%;
+                left: 46%;
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1900px) and (max-width: 2000px) {
+  #section-2 {
+    #imgwrapper {
+      #drag {
+        #overlay-wrapper {
+          .overlay-gr {
+            &#gr1 {
+              .npc {
+                top: 17%;
+                left: 11.75%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 14%;
+                left: 9.5%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr2 {
+              .npc {
+                top: 45.5%;
+                left: 22%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 44%;
+                left: 22%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr3 {
+              .gif {
+                top: 17.5%;
+                left: 30.5%;
+                transform: scale(1.2);
+              }
+            }
+            &#gr4 {
+              .npc {
+                top: 11.5%;
+                left: 33.5%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 10.5%;
+                left: 32.85%;
+                transform: scale(1.4);
+              }
+            }
+            &#gr5 {
+              .npc {
+                top: 18.75%;
+                left: 40%;
+                transform: scale(1.2);
+              }
+              .gif {
+                top: 16.5%;
+                left: 40%;
+                transform: scale(1.2);
+              }
+            }
+            &#gr6 {
+              .gif {
+                transform: scale(1.1);
+              }
+            }
+            &#gr7 {
+              .gif {
+                top: 23%;
+                left: 46.5%;
+                transform: scale(1.3);
+              }
+            }
+            &#gr8 {
+              .npc {
+                top: 44%;
+                left: 45%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 45.5%;
+                left: 42.5%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr9 {
+              .npc {
+                top: 55.5%;
+                left: 56.25%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 50%;
+                left: 56.1%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr10 {
+              .npc {
+                top: 53%;
+                left: 70.5%;
+                transform: scale(1.1);
+              }
+              .gif {
+                top: 48%;
+                left: 69%;
+                transform: scale(1.2);
+              }
+            }
+            &#gr11 {
+              .gif {
+                top: 16.5%;
+                left: 76%;
+                transform: scale(1.1);
+              }
+            }
+            &#gr12 {
+              .gif {
+                transform: scale(1.2);
+              }
+            }
+            &#gr13 {
+              .gif {
+                top: 84.25%;
+                left: 61.5%;
+                transform: scale(1.2);
+              }
+            }
+            &#gr14 {
+              .npc {
+                top: 73%;
+                left: 45.5%;
+                transform: scale(1.2);
+              }
+              .gif {
+                top: 73%;
+                left: 45.5%;
+                transform: scale(1.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 2001px) {
+  #section-2 {
+    #imgwrapper {
+      #drag {
+        #overlay-wrapper {
+          .overlay-gr {
+            &#gr1 {
+              .npc {
+                top: 19%;
+                left: 12.5%;
+                transform: scale(1.5);
+              }
+              .gif {
+                top: 17%;
+                left: 11%;
+                transform: scale(1.5);
+              }
+            }
+            &#gr2 {
+              .npc {
+                top: 47.5%;
+                left: 22.5%;
+                transform: scale(1.7);
+              }
+              .gif {
+                top: 46.5%;
+                left: 22.75%;
+                transform: scale(1.7);
+              }
+            }
+            &#gr3 {
+              .gif {
+                top: 21%;
+                left: 31.75%;
+                transform: scale(1.9);
+              }
+            }
+            &#gr4 {
+              .npc {
+                top: 15%;
+                left: 34.5%;
+                transform: scale(1.6);
+              }
+              .gif {
+                top: 13.25%;
+                left: 33.75%;
+                transform: scale(2.1);
+              }
+            }
+            &#gr5 {
+              .npc {
+                top: 22%;
+                left: 41.25%;
+                transform: scale(1.8);
+              }
+              .gif {
+                top: 20%;
+                left: 41.25%;
+                transform: scale(1.8);
+              }
+            }
+            &#gr6 {
+              .gif {
+                transform: scale(1.7);
+                top: 33%;
+                left: 37%;
+              }
+            }
+            &#gr7 {
+              .gif {
+                top: 26.25%;
+                left: 47.75%;
+                transform: scale(2);
+              }
+            }
+            &#gr8 {
+              .npc {
+                top: 47%;
+                left: 46%;
+                transform: scale(1.7);
+              }
+              .gif {
+                top: 48.5%;
+                left: 43.5%;
+                transform: scale(1.8);
+              }
+            }
+            &#gr9 {
+              .npc {
+                top: 58%;
+                left: 56.85%;
+                transform: scale(1.8);
+              }
+              .gif {
+                top: 54%;
+                left: 57.25%;
+                transform: scale(1.9);
+              }
+            }
+            &#gr10 {
+              .npc {
+                top: 54.5%;
+                left: 70.5%;
+                transform: scale(1.7);
+              }
+              .gif {
+                top: 51%;
+                left: 70%;
+                transform: scale(2);
+              }
+            }
+            &#gr11 {
+              .npc {
+                top: 24%;
+                left: 78.75%;
+                transform: scale(1.7);
+              }
+              .gif {
+                top: 20%;
+                left: 77.5%;
+                transform: scale(1.9);
+              }
+            }
+            &#gr12 {
+              .gif {
+                top: 3%;
+                left: 60.5%;
+                transform: scale(1.9);
+              }
+            }
+            &#gr13 {
+              .gif {
+                top: 86.25%;
+                left: 62.25%;
+                transform: scale(1.9);
+              }
+            }
+            &#gr14 {
+              .npc {
+                top: 76%;
+                left: 46.5%;
+                transform: scale(1.8);
+              }
+              .gif {
+                top: 76%;
+                left: 46.5%;
+                transform: scale(1.8);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
